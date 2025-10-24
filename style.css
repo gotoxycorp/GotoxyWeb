@@ -49,31 +49,37 @@ header.navbar .navbar-brand {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .hero-section img {
-  max-width: 80%;
+  max-width: 70%;
   height: auto;
 }
 
 .hero-arrows {
   font-size: 2rem;
-  margin-top: 20px;
+  margin-top: 100px;
 }
 
 /* =====================
    CHECK TEXT
    ===================== */
-.check-text a {
-  font-size: 1.2rem;
-  transition: 0.3s;
+.check-text {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
 }
 
-.check-text a:hover {
-  text-decoration: underline;
+.check-text img {
+  max-width: 80%;
+  height: auto;
+}
+
+.check-text:hover {
   transform: scale(1.05);
 }
+
 
 /* =====================
    ABOUT US
@@ -186,8 +192,9 @@ header.navbar .navbar-brand {
 .gotoxy-btn {
   display: inline-block;
   transition: 0.3s ease;
-  max-width: 200px;
-  width: 100%;
+  width: 40%;
+  max-width: 500px;
+  padding-top: 30px;
 }
 
 .gotoxy-btn img {
@@ -209,22 +216,21 @@ header.navbar .navbar-brand {
 
 .contact-links {
   display: flex;
-  flex-direction: column;  
-  align-items: center;  
-  gap: 20px;
+  justify-content: center; /* centra los íconos */
+  gap: 100px; /* espacio entre íconos */
   margin-top: 40px;
 }
 
 .contact-item {
-  display: flex;
-  flex-direction: column;  
-  align-items: center;  
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
   transition: transform 0.3s ease;
 }
 
 .contact-item img {
-  width: 60px;    
-  height: 60px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
 }
 
@@ -252,8 +258,9 @@ header.navbar .navbar-brand {
   }
 
   .gotoxy-btn {
-    max-width: 150px;
+    max-width: 250px;
   }
+
 
   .hero-section img {
     max-width: 90%;
@@ -267,11 +274,12 @@ header.navbar .navbar-brand {
     margin-left: 0;
   }
 
-  /* Ajustes About Us */
   .about-section .col-md-6 {
-    text-align: center;      /* centra texto y carrusel */
-    width: 100%;             /* ocupa todo el ancho */
-    margin-bottom: 20px;     /* espacio entre columnas en vertical */
+    text-align: center;
+
+    width: 100%;
+    margin-bottom: 20px;
+
   }
 
   .about-section img {
@@ -286,7 +294,9 @@ header.navbar .navbar-brand {
 }
 
 @media (max-width: 480px) {
-  #gameCarousel, #aboutCarousel {
+
+  #gameCarousel,
+  #aboutCarousel {
     width: 95%;
   }
 
@@ -303,12 +313,45 @@ header.navbar .navbar-brand {
     height: 50px;
   }
 
-  /* Ajustes extra About Us para pantallas muy chicas */
+
   .about-section h2 img {
     max-height: 30px;
   }
 
   .about-section p {
     font-size: 0.9rem;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; 
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.8rem;
+    padding: 8px 0;
   }
 }
