@@ -29,14 +29,13 @@
 
     <!-- ABOUT US + CARRUSEL -->
     <section class="container about-section py-5">
-        <div class="row">
+        <div class="row about-section">
             <!-- Texto -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-12 mb-4 mb-md-0 text-md-start text-center">
                 <h2 class="fw-bold text-black mb-3"
                     style="border-bottom: 3px solid #000; padding-bottom:5px; display:inline-block;">
                     <img src="Imagenes/ABOUT_SOLO.png" alt="About Us" style="height:40px;">
                 </h2>
-
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et egestas lorem, et sodales arcu.
                     Integer tincidunt justo sed scelerisque dapibus. Nullam ut arcu posuere, molestie dolor eu, pulvinar
@@ -44,9 +43,9 @@
                 </p>
             </div>
 
-            <div class="col-md-6 d-flex flex-column align-items-center">
-                <!-- Carrusel superior: solo cambia con flechas -->
-                <div id="gameCarousel" class="carousel slide">
+            <!-- Carrusel -->
+            <div class="col-md-6 col-12 d-flex flex-column align-items-center">
+                <div id="gameCarousel" class="carousel slide w-100" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-link="https://www.instagram.com/">
                             <img src="Imagenes/IMG_600X400_TEST.PNG" class="d-block w-100" alt="Game 1">
@@ -76,8 +75,15 @@
                     <a id="checkLink" href="https://www.instagram.com/" class="text-dark text-decoration-none">check it
                         out here!</a>
                 </p>
-
             </div>
+        </div>
+
+        <p class="mt-2 fw-bold check-text text-center w-100">
+            <a id="checkLink" href="https://www.instagram.com/" class="text-dark text-decoration-none">check it
+                out here!</a>
+        </p>
+
+        </div>
         </div>
     </section>
 

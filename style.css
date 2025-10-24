@@ -266,6 +266,23 @@ header.navbar .navbar-brand {
   .contact-links {
     margin-left: 0;
   }
+
+  /* Ajustes About Us */
+  .about-section .col-md-6 {
+    text-align: center;      /* centra texto y carrusel */
+    width: 100%;             /* ocupa todo el ancho */
+    margin-bottom: 20px;     /* espacio entre columnas en vertical */
+  }
+
+  .about-section img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto 15px auto;
+  }
+
+  .check-text a {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -284,5 +301,14 @@ header.navbar .navbar-brand {
   .contact-item img {
     width: 50px;
     height: 50px;
+  }
+
+  /* Ajustes extra About Us para pantallas muy chicas */
+  .about-section h2 img {
+    max-height: 30px;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
   }
 }
