@@ -106,14 +106,6 @@ header.navbar .navbar-brand {
   margin: 0 auto;
 }
 
-#gameCarousel .carousel-inner {
-  /* No tocar display ni overflow */
-}
-
-#gameCarousel .carousel-item {
-  /* Dejar que Bootstrap maneje display y posición */
-}
-
 #gameCarousel img {
   width: 100%;
   height: auto;
