@@ -3,7 +3,7 @@
    ===================== */
 body {
   font-family: 'Courier New', monospace;
-  background-color: #fff;
+  background-color: #ffffffff;
   color: #000;
   overflow-x: hidden;
   padding-top: 80px;
@@ -23,7 +23,7 @@ body {
   background-size: cover;
   background-position: center;
   height: 70px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
 }
 
 header.navbar {
@@ -51,7 +51,7 @@ header.navbar .navbar-brand {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+
   text-align: center;
 }
 
