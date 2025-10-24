@@ -1,24 +1,39 @@
+/* =====================
+   GENERAL
+   ===================== */
 body {
   font-family: 'Courier New', monospace;
   background-color: #fff;
   color: #000;
   overflow-x: hidden;
+  padding-top: 80px;
+  /* espacio para header fijo */
 }
 
-/* Header */
-header {
-  height: 70px;
-  display: flex;
-  align-items: center;
+/* Box sizing */
+* {
+  box-sizing: border-box;
 }
+
+/* =====================
+   HEADER
+   ===================== */
+.custom-header {
+  background-image: url('Imagenes/HEADER_SOLO.png');
+  background-size: cover;
+  background-position: center;
+  height: 70px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
 header.navbar {
-  padding-top: 0.25rem;    /* menos espacio arriba */
-  padding-bottom: 0.25rem; /* menos espacio abajo */
-  height: 50px;             /* altura fija opcional */
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  height: 50px;
 }
 
 header.navbar .navbar-brand {
-  font-size: 1.5rem;       /* ajustar tamaño del texto si querés */
+  font-size: 1.5rem;
 }
 
 .navbar-brand {
@@ -26,9 +41,28 @@ header.navbar .navbar-brand {
   letter-spacing: 1px;
 }
 
+/* =====================
+   HERO SECTION
+   ===================== */
 .hero-section {
   min-height: 100vh;
-  background-color: #fff;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.hero-section img {
+  max-width: 80%;
+  height: auto;
+}
+
+.hero-arrows {
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
 .arrows span {
@@ -43,16 +77,8 @@ header.navbar .navbar-brand {
   }
 }
 
-/* About Us */
-.section-title {
-  font-family: 'Courier New', monospace;
-  font-size: 2rem;
-  text-transform: lowercase;
-  border-bottom: 2px solid #000;
-  display: inline-block;
-}
-
 .check-text a {
+  font-size: 1.2rem;
   transition: 0.3s;
 }
 
@@ -61,21 +87,37 @@ header.navbar .navbar-brand {
   transform: scale(1.05);
 }
 
+/* =====================
+   ABOUT US
+   ===================== */
+.section-title {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  text-transform: lowercase;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+}
 
-
-/* ============================
-   Carrusel compacto y centrado
-   ============================ */
+/* =====================
+   CARRUSEL SUPERIOR - NORMAL
+   ===================== */
 #gameCarousel {
   width: 400px;
-  max-height: 400px;
-  position: relative;
+  margin: 0 auto;
+}
+
+#gameCarousel .carousel-inner {
+  /* No tocar display ni overflow */
+}
+
+#gameCarousel .carousel-item {
+  /* Dejar que Bootstrap maneje display y posición */
 }
 
 #gameCarousel img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* mantiene la proporción y no estira */
+  height: auto;
+  object-fit: cover;
 }
 
 .custom-arrow {
@@ -110,3 +152,149 @@ header.navbar .navbar-brand {
   right: -20px;
 }
 
+/* =====================
+   FULL WIDTH SECTIONS
+   ===================== */
+.particles-section,
+.black-section {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0;
+  overflow: hidden;
+}
+
+.particles-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =====================
+   SECCIÓN NEGRA
+   ===================== */
+.black-section {
+  min-height: 100vh;
+  background-color: #000;
+  background-image: url('Imagenes/BACK_GT_BLACK.png');
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.black-section h3,
+.black-section p {
+  font-family: 'Courier New', monospace;
+  color: white;
+}
+
+/* =====================
+   CARRUSEL INFERIOR - EFECTO LATERAL
+   ===================== */
+#aboutCarousel {
+  width: 70%;
+  margin: 40px auto;
+  overflow: visible;
+}
+
+#aboutCarousel .carousel-inner {
+  overflow: visible;
+}
+
+#aboutCarousel .carousel-item-next,
+#aboutCarousel .carousel-item-prev,
+#aboutCarousel .carousel-item.active {
+  display: flex;
+  justify-content: center;
+}
+
+#aboutCarousel .carousel-item-next .carousel-img,
+#aboutCarousel .carousel-item-prev .carousel-img {
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+.carousel-img {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  transition: transform 0.5s;
+}
+
+/* =====================
+   BOTÓN GOTXY TEST
+   ===================== */
+.gotoxy-btn {
+  display: inline-block;
+  /* border: 1px solid white;
+  border-radius: 30px; */
+  transition: 0.3s ease;
+}
+
+.gotoxy-btn img {
+  width: 100%;
+  height: 110px;
+  display: block;
+}
+
+.gotoxy-btn:hover {
+  /* background-color: rgb(71, 71, 71);
+  color: black; */
+  transform: scale(1.05);
+}
+
+/* =====================
+   CONTACTO
+   ===================== */
+.contact-section {
+  margin-top: 80px;
+}
+
+.contact-title {
+  font-family: 'Courier New', monospace;
+  text-transform: lowercase;
+  border-bottom: 1px solid white;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;  /* vertical */
+    align-items: flex-start;  /* alineados a la izquierda */
+    margin-left: 100px;       /* ajusta la distancia desde el borde izquierdo */
+    gap: 40px;                /* espacio entre cada item */
+    margin-top: 40px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;  /* icono arriba, texto abajo */
+    align-items: flex-start;  /* icono y texto alineados a la izquierda */
+    transition: transform 0.3s ease; /* animación al hover */
+}
+
+.contact-item img {
+    width: 80px;    /* iconos grandes */
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.contact-item a {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+}
+
+/* Animación al pasar el mouse */
+.contact-item:hover {
+    transform: translateY(-10px); /* se eleva al pasar el mouse */
+}
