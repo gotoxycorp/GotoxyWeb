@@ -3,11 +3,10 @@
    ===================== */
 body {
   font-family: 'Courier New', monospace;
-  background-color: #ffffffff;
+  background-color: #fff;
   color: #000;
   overflow-x: hidden;
   padding-top: 80px;
-  /* espacio para header fijo */
 }
 
 /* Box sizing */
@@ -23,7 +22,6 @@ body {
   background-size: cover;
   background-position: center;
   height: 70px;
-
 }
 
 header.navbar {
@@ -46,13 +44,12 @@ header.navbar .navbar-brand {
    ===================== */
 .hero-section {
   min-height: 100vh;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
+  padding: 20px;
 }
 
 .hero-section img {
@@ -65,18 +62,9 @@ header.navbar .navbar-brand {
   margin-top: 20px;
 }
 
-.arrows span {
-  font-size: 2rem;
-  margin: 0 5px;
-  animation: bounce 1s infinite alternate;
-}
-
-@keyframes bounce {
-  to {
-    transform: translateY(8px);
-  }
-}
-
+/* =====================
+   CHECK TEXT
+   ===================== */
 .check-text a {
   font-size: 1.2rem;
   transition: 0.3s;
@@ -102,7 +90,8 @@ header.navbar .navbar-brand {
    CARRUSEL SUPERIOR - NORMAL
    ===================== */
 #gameCarousel {
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -110,38 +99,6 @@ header.navbar .navbar-brand {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-.custom-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.custom-arrow:hover {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-control-prev.custom-arrow {
-  left: -20px;
-}
-
-.carousel-control-next.custom-arrow {
-  right: -20px;
 }
 
 /* =====================
@@ -172,13 +129,15 @@ header.navbar .navbar-brand {
   min-height: 100vh;
   background-color: #000;
   background-image: url('Imagenes/BACK_GT_BLACK.png');
+  background-size: cover;
+  background-position: center;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 20px;
 }
 
 .black-section h3,
@@ -188,10 +147,11 @@ header.navbar .navbar-brand {
 }
 
 /* =====================
-   CARRUSEL INFERIOR - EFECTO LATERAL
+   CARRUSEL INFERIOR
    ===================== */
 #aboutCarousel {
-  width: 70%;
+  width: 90%;
+  max-width: 600px;
   margin: 40px auto;
   overflow: visible;
 }
@@ -225,20 +185,18 @@ header.navbar .navbar-brand {
    ===================== */
 .gotoxy-btn {
   display: inline-block;
-  /* border: 1px solid white;
-  border-radius: 30px; */
   transition: 0.3s ease;
+  max-width: 200px;
+  width: 100%;
 }
 
 .gotoxy-btn img {
   width: 100%;
-  height: 110px;
+  height: auto;
   display: block;
 }
 
 .gotoxy-btn:hover {
-  /* background-color: rgb(71, 71, 71);
-  color: black; */
   transform: scale(1.05);
 }
 
@@ -249,44 +207,82 @@ header.navbar .navbar-brand {
   margin-top: 80px;
 }
 
-.contact-title {
-  font-family: 'Courier New', monospace;
-  text-transform: lowercase;
-  border-bottom: 1px solid white;
-  display: inline-block;
-  margin-bottom: 40px;
-}
-
 .contact-links {
-    display: flex;
-    flex-direction: column;  /* vertical */
-    align-items: flex-start;  /* alineados a la izquierda */
-    margin-left: 100px;       /* ajusta la distancia desde el borde izquierdo */
-    gap: 40px;                /* espacio entre cada item */
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;  
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .contact-item {
-    display: flex;
-    flex-direction: column;  /* icono arriba, texto abajo */
-    align-items: flex-start;  /* icono y texto alineados a la izquierda */
-    transition: transform 0.3s ease; /* animación al hover */
+  display: flex;
+  flex-direction: column;  
+  align-items: center;  
+  transition: transform 0.3s ease;
 }
 
 .contact-item img {
-    width: 80px;    /* iconos grandes */
-    height: 80px;
-    margin-bottom: 10px;
+  width: 60px;    
+  height: 60px;
+  margin-bottom: 10px;
 }
 
 .contact-item a {
-    color: #000;
-    text-decoration: none;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
 }
 
-/* Animación al pasar el mouse */
 .contact-item:hover {
-    transform: translateY(-10px); /* se eleva al pasar el mouse */
+  transform: translateY(-10px);
+}
+
+/* =====================
+   MEDIA QUERIES PARA MOVILES
+   ===================== */
+@media (max-width: 768px) {
+  #gameCarousel {
+    max-width: 300px;
+  }
+
+  #aboutCarousel {
+    max-width: 300px;
+  }
+
+  .gotoxy-btn {
+    max-width: 150px;
+  }
+
+  .hero-section img {
+    max-width: 90%;
+  }
+
+  .black-section {
+    padding: 60px 10px;
+  }
+
+  .contact-links {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #gameCarousel, #aboutCarousel {
+    width: 95%;
+  }
+
+  .hero-section img {
+    max-width: 100%;
+  }
+
+  .gotoxy-btn {
+    max-width: 120px;
+  }
+
+  .contact-item img {
+    width: 50px;
+    height: 50px;
+  }
 }
