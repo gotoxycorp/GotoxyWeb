@@ -3,7 +3,7 @@
    ===================== */
 body {
   font-family: 'Courier New', monospace;
-  background-color: #fff;
+  background-image: url('Imagenes/BACK_GC_WHITE.png');
   color: #000;
   overflow-x: hidden;
   padding-top: 80px;
@@ -18,7 +18,7 @@ body {
    HEADER
    ===================== */
 .custom-header {
-  background-image: url('Imagenes/HEADER_SOLO.png');
+  background-image: url('Imagenes/HEADER_GC.png');
   background-size: cover;
   background-position: center;
   height: 70px;
@@ -32,6 +32,10 @@ header.navbar {
 
 header.navbar .navbar-brand {
   font-size: 1.5rem;
+}
+
+.header-logo {
+  height: 40px;
 }
 
 .navbar-brand {
@@ -195,7 +199,7 @@ header.navbar .navbar-brand {
   width: 40%;
   max-width: 500px;
   padding-top: 30px;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .gotoxy-btn img {
@@ -284,30 +288,36 @@ main {
    ===================== */
 @media (max-width: 768px) {
 
+    .header-logo {
+    height: 30px; 
+  }
   /* Hero */
   .hero-section {
-    min-height: 50vh;      /* reduce altura para que no quede tanto espacio */
+    min-height: 50vh;
     padding: 15px 10px;
   }
 
   .hero-arrows {
-    max-width: 150px;       /* limita tamaño de la imagen de flechas */
-    margin-top: 15px;
+    max-width: 150px;
+    margin-top: 80px;
   }
 
   /* Botón Gotoxy Test */
   .gotoxy-btn {
-      width: 70%;    /* más ancho en tablets */
+    width: 70%;
+    /* más ancho en tablets */
     max-width: none;
 
   }
 
   .gotoxy-btn img {
-     width: 100%;
+    width: 100%;
 
   }
+
   /* Carousel */
-  #gameCarousel, #aboutCarousel {
+  #gameCarousel,
+  #aboutCarousel {
     max-width: 100%;
   }
 
@@ -330,12 +340,14 @@ main {
 
   /* Contactos */
   .contact-links {
-    gap: 30px;           /* reduce espacio entre íconos */
+    gap: 30px;
+    /* reduce espacio entre íconos */
     justify-content: center;
   }
 
   .contact-item img {
-    width: 70px;          /* reduce tamaño de los iconos */
+    width: 70px;
+    /* reduce tamaño de los iconos */
     height: 70px;
   }
 }
