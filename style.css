@@ -3,7 +3,7 @@
    ===================== */
 body {
   font-family: 'Courier New', monospace;
-  background-image: url('Imagenes/BACK_GC_WHITE.png');
+  background-image: url('Imagenes/GC_WHITE_10_OPACITY.png');
   color: #000;
   overflow-x: hidden;
   padding-top: 80px;
@@ -138,7 +138,7 @@ header.navbar .navbar-brand {
 .black-section {
   min-height: 100vh;
   background-color: #000;
-  background-image: url('Imagenes/BACK_GT_BLACK.png');
+  background-image: url('Imagenes/GT_BLACK_20_OPACITY.png');
   background-size: cover;
   background-position: center;
   color: #fff;
