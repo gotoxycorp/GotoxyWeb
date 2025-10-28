@@ -291,15 +291,17 @@ main {
   width: 100%;
   margin-top: auto;
 }
+
 /* =====================
     FLECHAS
    ===================== */
-   /* =====================
+/* =====================
    FLECHAS NEGRAS EN LOS CARRUSELES
    ===================== */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-image: none !important; /* eliminamos el SVG blanco original */
+  background-image: none !important;
+  /* eliminamos el SVG blanco original */
   width: 30px;
   height: 30px;
   border: solid rgb(95, 95, 95);
@@ -328,9 +330,10 @@ main {
    ===================== */
 @media (max-width: 768px) {
 
-    .header-logo {
-    height: 30px; 
+  .header-logo {
+    height: 30px;
   }
+
   /* Hero */
   .hero-section {
     min-height: 50vh;
@@ -356,11 +359,24 @@ main {
   }
 
   /* Carousel */
-  #gameCarousel,
+  /* Carrusel inferior igual que el superior */
   #aboutCarousel {
-    max-width: 100%;
+    width: 85vw;       
+    max-width: 350px;  
+    margin: 0 auto;
   }
-  
+
+  #aboutCarousel .carousel-img {
+    width: 100%;
+    height: auto;
+  }
+   #aboutCarousel .carousel-control-prev {
+    left: -40px;
+  }
+  #aboutCarousel .carousel-control-next {
+    right: -40px;
+  }
+
 
   /* About Us */
   .about-section .col-md-6 {
@@ -390,9 +406,5 @@ main {
     height: 70px;
   }
 
-    #gameCarousel {
-    width: 85vw;       
-    max-width: 360px;  
-    margin: 0 auto;
-  }
+
 }
