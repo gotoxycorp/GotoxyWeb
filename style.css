@@ -122,6 +122,26 @@ header.navbar {
   height: auto;
   object-fit: cover;
 }
+/* Mover las flechas hacia afuera del carrusel */
+#gameCarousel .carousel-control-prev {
+  left: -60px; /* alejás la flecha izquierda hacia afuera */
+}
+
+#gameCarousel .carousel-control-next {
+  right: -60px; /* alejás la flecha derecha hacia afuera */
+}
+
+/* Asegurar que las flechas se mantengan centradas verticalmente */
+#gameCarousel .carousel-control-prev-icon,
+#gameCarousel .carousel-control-next-icon {
+  filter: invert(1); /* las vuelve negras si eran blancas */
+}
+
+/* Si querés que no se superpongan al carrusel */
+#gameCarousel {
+  overflow: visible;
+}
+
 
 /* =====================
    FULL WIDTH SECTIONS
