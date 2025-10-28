@@ -18,20 +18,32 @@ body {
    HEADER
    ===================== */
 .custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('Imagenes/HEADER_GC.png');
   background-size: cover;
   background-position: center;
-  height: 70px;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 header.navbar {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   height: 50px;
-}
-
-header.navbar .navbar-brand {
-  font-size: 1.5rem;
 }
 
 .header-logo {
@@ -279,6 +291,34 @@ main {
   width: 100%;
   margin-top: auto;
 }
+/* =====================
+    FLECHAS
+   ===================== */
+   /* =====================
+   FLECHAS NEGRAS EN LOS CARRUSELES
+   ===================== */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none !important; /* eliminamos el SVG blanco original */
+  width: 30px;
+  height: 30px;
+  border: solid rgb(95, 95, 95);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+}
+
+/* Flecha izquierda */
+.carousel-control-prev-icon {
+  transform: rotate(135deg);
+  margin-left: 10px;
+}
+
+/* Flecha derecha */
+.carousel-control-next-icon {
+  transform: rotate(-45deg);
+  margin-right: 10px;
+}
 
 /* =====================
    MEDIA QUERIES PARA MOVILES
@@ -320,6 +360,7 @@ main {
   #aboutCarousel {
     max-width: 100%;
   }
+  
 
   /* About Us */
   .about-section .col-md-6 {
@@ -341,13 +382,17 @@ main {
   /* Contactos */
   .contact-links {
     gap: 30px;
-    /* reduce espacio entre íconos */
     justify-content: center;
   }
 
   .contact-item img {
     width: 70px;
-    /* reduce tamaño de los iconos */
     height: 70px;
+  }
+
+    #gameCarousel {
+    width: 85vw;       
+    max-width: 360px;  
+    margin: 0 auto;
   }
 }
