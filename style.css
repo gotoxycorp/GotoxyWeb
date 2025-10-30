@@ -1,13 +1,14 @@
 /* =====================
    GENERAL
    ===================== */
-body {
-  font-family: 'Courier New', monospace;
+body.Home {
   background-image: url('Imagenes/GC_WHITE_10_OPACITY.png');
   color: #000;
   overflow-x: hidden;
   padding-top: 80px;
 }
+
+
 .FuenteUno {
   font-family: 'Zalando Sans SemiExpanded', sans-serif;
 }
