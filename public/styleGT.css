@@ -1,0 +1,243 @@
+body.Test {
+  background-image: url('Imagenes/GT_BLACK_15_OPACITY.png');
+  color: #000;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+.FuenteUno {
+  font-family: 'Zalando Sans SemiExpanded', sans-serif;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+.custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Imagenes/AssetsGotoxyTest/HEADER_SOLO_WHITE.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+header.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  height: 50px;
+}
+
+.header-logo {
+  height: 40px;
+}
+
+.navbar-brand {
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+/* =====================
+   HERO SECTION
+   ===================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.hero-section img {
+  max-width: 70%;
+  height: auto;
+}
+
+.hero-arrows {
+  font-size: 2rem;
+  margin-top: 100px;
+}
+
+/* ================
+   ABOUT SECTION
+   ================ */
+
+.about-title {
+  height: 70px;
+  /* o el tamaño que quieras */
+}
+
+.about-section p {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.carousel-inner img {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
+
+.method-section .section-title {
+  width: 300px;
+  /* más chico */
+  display: block;
+  margin-left: 0%;
+  /* pegado al margen izquierdo */
+  margin-bottom: 20px;
+  padding-top: 40px;
+}
+
+.contact-title {
+  width: 400px;
+  /* más chica */
+  padding-bottom: 20px;
+  padding-top: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+
+.btn-light {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* =====================
+   RESPONSIVE (MENOS DE 768px)
+   ===================== */
+@media (max-width: 768px) {
+
+  /* GENERAL */
+
+
+  /* ========= HERO ========= */
+  .hero-section {
+    min-height: 100vh;
+    /* más alto para destacar */
+    padding: 40px 20px;
+  }
+
+  .hero-section img.hero-logo {
+    max-width: 90%;
+    /* más grande en celular */
+  }
+
+  .hero-arrows {
+    margin-top: 60px;
+  }
+
+  .hero-arrows img {
+    width: 200px;
+    /* flechas más chicas */
+    height: auto;
+  }
+
+  /* ========= ABOUT ========= */
+  .about-section p {
+    max-width: 85%;
+    /* más angosto */
+    margin: 20px auto;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .about-title {
+    height: 50px;
+  }
+
+  .carousel-inner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .carousel-control-prev {
+    left: 10px !important;
+  }
+
+  .carousel-control-next {
+    right: 10px !important;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+  }
+
+  /* ========= GT METHOD ========= */
+  .method-section .section-title {
+    width: 220px;
+    padding-top: 20px;
+  }
+
+  .pdf-container iframe {
+    width: 90%;
+    /* ocupa casi toda la pantalla */
+    height: 350px;
+    /* ajusta el alto */
+    border-radius: 10px;
+  }
+
+  /* ========= CONTACT ========= */
+  .contact-title {
+    width: 250px;
+    margin: 30px auto 10px auto;
+  }
+
+  .contact-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .btn-light {
+    width: 100%;
+    padding: 10px;
+  }
+}

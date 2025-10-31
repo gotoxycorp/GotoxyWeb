@@ -28,3 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index2.html";
   });
 });
+
+
+
