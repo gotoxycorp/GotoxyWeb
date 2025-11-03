@@ -101,10 +101,8 @@ header.navbar {
 
 .method-section .section-title {
   width: 300px;
-  /* más chico */
   display: block;
   margin-left: 0%;
-  /* pegado al margen izquierdo */
   margin-bottom: 20px;
   padding-top: 40px;
 }
