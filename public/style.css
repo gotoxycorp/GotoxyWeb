@@ -280,6 +280,23 @@ main {
   margin-top: auto;
 }
 
+.gotoxy-footer {
+  background-color: #000;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Imagen de partículas */
+.footer-particles {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Íconos */
 .footer-icons {
   display: flex;
   justify-content: center;
@@ -291,6 +308,7 @@ main {
   height: 28px;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
@@ -298,6 +316,7 @@ main {
 .footer-icon:hover {
   transform: scale(1.2);
 }
+
 
 .footer-credit {
     text-align: center;
@@ -338,42 +357,6 @@ main {
   margin-right: 10px;
 }
 
-.gotoxy-footer {
-  background-color: #000;
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  position: relative;
-}
-
-/* Imagen de partículas */
-.footer-particles {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* Íconos */
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-
-.footer-icon {
-  width: 28px;
-  height: 28px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
-}
-
-.footer-icon:hover {
-  transform: scale(1.2);
-}
 
 
 
