@@ -7,6 +7,7 @@ body.Test {
 
 .FuenteUno {
   font-family: 'Zalando Sans SemiExpanded', sans-serif;
+  text-align: justify;
 }
 
 /* =====================
@@ -195,27 +196,18 @@ header.navbar {
 
   /* GENERAL */
 
-
+ .header-logo {
+    height: 30px;
+  }
   /* ========= HERO ========= */
   .hero-section {
-    min-height: 100vh;
-    /* más alto para destacar */
-    padding: 40px 20px;
-  }
-
-  .hero-section img.hero-logo {
-    max-width: 90%;
-    /* más grande en celular */
+    min-height: 50vh;
+    padding: 15px 10px;
   }
 
   .hero-arrows {
-    margin-top: 60px;
-  }
-
-  .hero-arrows img {
-    width: 200px;
-    /* flechas más chicas */
-    height: auto;
+    max-width: 150px;
+    margin-top: 190px;
   }
 
   /* ========= ABOUT ========= */
@@ -232,9 +224,9 @@ header.navbar {
   }
 
   .carousel-inner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+   width: 85vw;
+    max-width: 340px;
+    margin: 0 auto;
   }
 
   .carousel-control-prev {
@@ -244,6 +236,7 @@ header.navbar {
   .carousel-control-next {
     right: 10px !important;
   }
+  
 
   .carousel-control-prev-icon,
   .carousel-control-next-icon {

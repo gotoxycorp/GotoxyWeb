@@ -11,6 +11,7 @@ body.Home {
 
 .FuenteUno {
   font-family: 'Zalando Sans SemiExpanded', sans-serif;
+  
 }
 
 /* Box sizing */
@@ -373,14 +374,14 @@ main {
   }
 
   /* Hero */
-  .hero-section {
+   .hero-section {
     min-height: 50vh;
     padding: 15px 10px;
   }
 
   .hero-arrows {
     max-width: 150px;
-    margin-top: 80px;
+    margin-top: 190px;
   }
 
   /* Botón Gotoxy Test */
