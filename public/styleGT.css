@@ -91,10 +91,36 @@ header.navbar {
   font-size: 1rem;
 }
 
+#carouselExample {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-inner {
+  width: 500px; /* igual al max-width de la imagen */
+  overflow: visible;
+}
+
 .carousel-inner img {
-  max-width: 500px;
-  margin: 0 auto;
+  width: 100%;
   border-radius: 10px;
+}
+
+/* Flechas pegadas a la imagen */
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+  left: calc(50% - 280px); 
+}
+
+.carousel-control-next {
+  right: calc(50% - 280px);
 }
 
 
