@@ -112,6 +112,11 @@ header.navbar {
   border-bottom: 2px solid #000;
   display: inline-block;
 }
+.icono-fijo {
+  height: 60px !important;
+  width: auto !important;
+  max-width: none !important;
+}
 
 /* =====================
    CARRUSEL SUPERIOR - NORMAL
