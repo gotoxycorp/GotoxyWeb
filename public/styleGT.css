@@ -62,17 +62,16 @@ header.navbar {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 30px;
+  margin-top: 50px;
 }
 
 .hero-section img {
   max-width: 70%;
   height: auto;
 }
-
 .hero-arrows {
   font-size: 2rem;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 /* ================
@@ -200,20 +199,22 @@ header.navbar {
     height: 30px;
   }
   /* ========= HERO ========= */
-  .hero-section {
-    min-height: 50vh;
+ .hero-section {
+    min-height: 60vh;
     padding: 15px 10px;
   }
-
+  .hero-section img {
+  max-width: 90%;
+  padding-top: 30px;
+}
   .hero-arrows {
     max-width: 150px;
-    margin-top: 190px;
+    margin-top: 120px;
   }
 
   /* ========= ABOUT ========= */
   .about-section p {
     max-width: 85%;
-    /* más angosto */
     margin: 20px auto;
     font-size: 0.9rem;
     text-align: center;
@@ -221,6 +222,7 @@ header.navbar {
   }
   .about-title {
     height: 50px;
+    margin-top: 40px;
   }
 
   .carousel-inner img {

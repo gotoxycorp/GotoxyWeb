@@ -70,7 +70,7 @@ header.navbar {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 30px;
+    margin-top: 50px;
 }
 
 .hero-section img {
@@ -80,7 +80,7 @@ header.navbar {
 
 .hero-arrows {
   font-size: 2rem;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 /* =====================
@@ -111,11 +111,6 @@ header.navbar {
   text-transform: lowercase;
   border-bottom: 2px solid #000;
   display: inline-block;
-}
-.icono-fijo {
-  height: 60px !important;
-  width: auto !important;
-  max-width: none !important;
 }
 
 /* =====================
@@ -379,22 +374,23 @@ main {
   }
 
   /* Hero */
-   .hero-section {
-    min-height: 50vh;
+ .hero-section {
+    min-height: 70vh;
     padding: 15px 10px;
   }
-
+  .hero-section img {
+  max-width: 70%;
+  padding-top: 30px;
+}
   .hero-arrows {
-    max-width: 150px;
-    margin-top: 190px;
+    max-width: 160px;
+    margin-top: 120px;
   }
 
   /* Botón Gotoxy Test */
   .gotoxy-btn {
     width: 70%;
-    /* más ancho en tablets */
     max-width: none;
-
   }
 
   .gotoxy-btn img {
