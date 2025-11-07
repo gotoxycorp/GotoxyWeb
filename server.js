@@ -6,7 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public')); // 👈 ruta absoluta
+app.use(express.static(__dirname));
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
