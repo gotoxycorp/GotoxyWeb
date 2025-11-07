@@ -1,48 +1,35 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
+require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // carpeta con tu HTML
+app.use(express.static('public')); // tu carpeta con el HTML
 
-app.post('/send-email', (req, res) => {
-    const { name, email, phone, message } = req.body;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-    console.log(req.body); // 🔹 verifica que llegan los datos
+app.post('/send-email', async (req, res) => {
+  const { name, email, phone, message } = req.body;
 
-    // Configuración del transporte (aquí pones tu correo y App Password)
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
-        }
-
+  try {
+    const data = await resend.emails.send({
+      from: 'contacto@gotoxyweb.com', // o el que uses, puede ser inventado
+      to: 'gotoxycorp@gmail.com', // correo donde querés recibirlo
+      subject: `Nuevo mensaje de ${name}`,
+      text: `Email: ${email}\nTeléfono: ${phone || 'No proporcionado'}\n\nMensaje:\n${message}`,
     });
 
-    // Configuración del correo
-    let mailOptions = {
-        from: email,                  // quien llena el formulario
-        to: 'lucila.romeo03@gmail.com',     // ← a dónde quieres recibirlo (puede ser tu mismo correo)
-        subject: `Nuevo mensaje de ${name}`,
-        text: `Teléfono: ${phone || 'No proporcionado'}\n\nMensaje:\n${message}`
-    };
-
-    // Enviar correo
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            res.send('Error al enviar el correo.');
-        } else {
-            console.log('Correo enviado:', info.response);
-            res.send('Correo enviado correctamente!');
-        }
-    });
+    console.log('Correo enviado:', data);
+    res.status(200).send('Correo enviado correctamente!');
+  } catch (error) {
+    console.error('Error al enviar correo:', error);
+    res.status(500).send('Error al enviar el correo.');
+  }
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
