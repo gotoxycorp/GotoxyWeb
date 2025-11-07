@@ -2,12 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Servir tanto el index.html como la carpeta public
+app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname)); // ahora sirve tu index.html directamente
 
+// Ruta para el formulario
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, message } = req.body;
 
@@ -30,17 +34,20 @@ app.post('/send-email', async (req, res) => {
     await transporter.sendMail(mailOptions);
     console.log('✅ Correo enviado correctamente');
 
-    res.redirect('/'); // vuelve a index.html
+    // Redirige al index que está fuera del public
+    res.redirect('/index.html');
   } catch (error) {
     console.error('❌ Error al enviar correo:', error);
-    res.send('Error al enviar el correo.');
+    res.status(500).send('Error al enviar el correo.');
   }
 });
 
+// Si alguien entra al inicio, manda el index.html
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+// Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
