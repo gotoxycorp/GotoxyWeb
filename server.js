@@ -17,9 +17,10 @@ app.post('/send-email', (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'gotoxycorp@gmail.com',    // ← TU correo
-            pass: 'nwim ncll mhsn qqzt'        // ← TU App Password de Gmail
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
+
     });
 
     // Configuración del correo
