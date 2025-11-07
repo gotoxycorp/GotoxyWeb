@@ -23,7 +23,7 @@ app.post('/send-email', async (req, res) => {
     });
 
     console.log('Correo enviado:', data);
-    res.redirect('/'); // vuelve al inicio de tu sitio
+  res.redirect('/'); // vuelve al inicio de tu sitio
 
   } catch (error) {
     console.error('Error al enviar correo:', error);
