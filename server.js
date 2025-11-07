@@ -36,7 +36,8 @@ app.post('/send-email', async (req, res) => {
     console.log('✅ Correo enviado correctamente');
 
     // Redirige de nuevo a la página principal (index.html)
-    res.redirect('/index.html');
+   res.sendFile(__dirname + '/index.html');
+
   } catch (error) {
     console.error('❌ Error al enviar correo:', error);
     res.status(500).send('Error al enviar el correo.');
