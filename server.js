@@ -23,7 +23,8 @@ app.post('/send-email', async (req, res) => {
     });
 
     console.log('Correo enviado:', data);
-    res.status(200).send('Correo enviado correctamente!');
+    res.redirect('/'); // vuelve al inicio de tu sitio
+
   } catch (error) {
     console.error('Error al enviar correo:', error);
     res.status(500).send('Error al enviar el correo.');
