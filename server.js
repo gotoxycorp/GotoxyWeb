@@ -1,50 +1,49 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Servir tanto el index como los archivos públicos
-app.use(express.static(__dirname)); // sirve index.html
-app.use(express.static(__dirname + '/public')); // sirve tu carpeta public
-
+// Servir index.html y carpeta public
+app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Ruta para enviar el correo
+// Inicializar Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Endpoint para enviar el email
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, message } = req.body;
+  console.log('📩 Datos recibidos del formulario:', req.body);
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
+    if (!process.env.RESEND_API_KEY) {
+      console.error('❌ Falta RESEND_API_KEY en Render');
+      return res.status(500).send('Error: falta API key');
+    }
+
+    // Enviar correo con Resend
+    const data = await resend.emails.send({
+      from: 'Gotoxy Contact <onboarding@resend.dev>', // no cambiar
+      to: ['gotoxycorp@gmail.com'],
+      subject: `Nuevo mensaje de ${name}`,
+      text: `Email: ${email}\nTeléfono: ${phone || 'No proporcionado'}\n\nMensaje:\n${message}`,
     });
 
-    const mailOptions = {
-      from: email,
-      to: 'gotoxycorp@gmail.com',
-      subject: `Nuevo mensaje de ${name}`,
-      text: `Teléfono: ${phone || 'No proporcionado'}\n\nMensaje:\n${message}`,
-    };
+    console.log('✅ Correo enviado:', data);
 
-    await transporter.sendMail(mailOptions);
-    console.log('✅ Correo enviado correctamente');
-
-    // Redirige de nuevo a la página principal (index.html)
-   res.sendFile(__dirname + '/index.html');
-
+    // Redirigir al index
+    res.redirect('/index.html');
   } catch (error) {
-    console.error('❌ Error al enviar correo:', error);
+    console.error('❌ Error al enviar el correo:', error);
     res.status(500).send('Error al enviar el correo.');
   }
 });
 
-// Ruta base (inicio)
+// Página principal
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
