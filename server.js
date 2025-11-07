@@ -1,33 +1,44 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Resend } = require('resend');
-
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
-
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+app.use(express.static(__dirname)); // ahora sirve tu index.html directamente
 
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, message } = req.body;
 
   try {
-    await resend.emails.send({
-      from: 'contacto@gotoxycorp.com',
-      to: 'gotoxycorp@gmail.com',
-      subject: `Nuevo mensaje de ${name}`,
-      text: `Email: ${email}\nTeléfono: ${phone || 'No proporcionado'}\n\nMensaje:\n${message}`,
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
-    // 👇 Redirige al inicio (funciona si existe /public/index.html)
-    res.redirect('/');
+    const mailOptions = {
+      from: email,
+      to: 'gotoxycorp@gmail.com',
+      subject: `Nuevo mensaje de ${name}`,
+      text: `Teléfono: ${phone || 'No proporcionado'}\n\nMensaje:\n${message}`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log('✅ Correo enviado correctamente');
+
+    res.redirect('/'); // vuelve a index.html
   } catch (error) {
-    console.error('Error al enviar correo:', error);
-    res.status(500).send('Error al enviar el correo.');
+    console.error('❌ Error al enviar correo:', error);
+    res.send('Error al enviar el correo.');
   }
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.listen(PORT, () => {
